@@ -1,0 +1,23 @@
+[versions]
+agp = "8.7.3"
+kotlin = "2.0.0"
+coreKtx = "1.15.0"
+lifecycleRuntimeKtx = "2.8.7"
+coroutines = "1.10.0"
+# Maybe publishing android is stop, must use multiplatform thing?
+# Any version higher than this will crash if not compiled manually.
+# 'java.lang.UnsatisfiedLinkError: dlopen failed: cannot locate symbol "_ZN4sksg4NodeD2Ev"'
+skiko = "0.8.9"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+skiko-android = { module = "org.jetbrains.skiko:skiko-android", version.ref = "skiko" }
+skiko-android-runtime-x64 = { module = "org.jetbrains.skiko:skiko-android-runtime-x64", version.ref = "skiko" }
+skiko-android-runtime-arm64 = { module = "org.jetbrains.skiko:skiko-android-runtime-arm64", version.ref = "skiko" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
